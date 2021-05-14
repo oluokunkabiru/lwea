@@ -37,7 +37,8 @@ $pagetitle = "About";
 								<div class="icon"><span class="flaticon-pray"></span></div>
 								<div class="text">
 									<h4>The Supernatural</h4>
-									<span class="subheading">What to Expect</span>
+									
+									<span class="subheading">What to Expect from him</span>
 									<p> <b>"He sent His Word, and Healed them, and delivered them from their destructions - Ps 107:20"</b>  <br>We minister the word, lay hands on the sick and see the supernatural manifested naturally to the glory of Jesus the Christ" </p>
 								</div>
 							</div>

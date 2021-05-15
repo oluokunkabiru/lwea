@@ -395,7 +395,7 @@ include("footer.php");
       $("#mTopic").text(title);
       $("#mCategory").text(date);
       $("#mComment").text(venue);
-      $("#mUrl").text(about);
+      $("#mUrl").html(about);
       $("#mPicture").attr('src', picture);
   })
 

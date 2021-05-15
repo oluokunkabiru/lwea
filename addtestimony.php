@@ -37,26 +37,30 @@
                     if(!is_dir($target_dir)){
                         mkdir($target_dir);
                     }
-                $target_file = $target_dir . basename($_FILES["InputFile"]["name"]);
+                $target_file = $target_dir . time(). basename($_FILES["InputFile"]["name"]);
                 // echo $target_file;
                 $check = getimagesize($_FILES["InputFile"]["tmp_name"]);
-                  if($check == false) {
+                $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+
+                if($check == false) {
                        $error['image']= "File is not an image.";
                   } 
-                  if ($_FILES["InputFile"]["size"] > 500000) {
+                  elseif ($_FILES["InputFile"]["size"] > 5000000) {
                     $error['image']= "Sorry, your file is too large.";
                 }
-                $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
-                if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg" ) {
+                elseif($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg" ) {
                   $error['image']= "Sorry, only JPG, JPEG & PNG  files are allowed.";
                   }
-                  if (count($error)==0) {
+                  elseif (count($error)==0) {
                     move_uploaded_file($_FILES["InputFile"]["tmp_name"], $target_file);
                 } else{
                   $error['image']="Please fill the required areas above";
                 }
             }
-
+foreach ($error as $value) {
+    # code...
+    echo "$value<br>";
+}
                 $result = json_encode($error);
                 if(count($error) > 0){
                     echo $result;

@@ -37,6 +37,7 @@
     $pr = mysqli_query($church, "SELECT * FROM testimony WHERE id ='$id'");
     $dat = mysqli_fetch_array($pr);
     $picture = $dat['picture'];
+    // echo "kadklaldkasd $picture";
     if(!empty($picture)){
           unlink("../".$picture);
     }
@@ -79,24 +80,22 @@ if (isset($_POST['updatebutton'])) {
     $date = test_input($_POST["testimony"]);
   }
 
-  $target_dir = "testimonies/";
+  $target_dir = "../testimonies/";
   if ($_FILES["InputFile"]["size"] > 0) {
-    $target_file = $target_dir . basename($_FILES["InputFile"]["name"]);
+    $target_file = $target_dir . time(). basename($_FILES["InputFile"]["name"]);
     // echo $target_file;
     $check = getimagesize($_FILES["InputFile"]["tmp_name"]);
-      if($check == false) {
-           $lwea['image']= "File is not an image.";
-      } 
-      if ($_FILES["InputFile"]["size"] > 500000) {
-        $lwea['image']= "Sorry, your file is too large.";
-    }
     $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
-    if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg" ) {
+
+    if($check == false) {
+           $lwea['image']= "File is not an image.";
+      }elseif ($_FILES["InputFile"]["size"] > 5000000) {
+        $lwea['image']= "Sorry, your file is too large.";
+    }elseif($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg" ) {
       $lwea['image']= "Sorry, only JPG, JPEG & PNG  files are allowed.";
-      }
-      if (count($lwea)==0) {
+      }elseif (count($lwea)==0) {
         move_uploaded_file($_FILES["InputFile"]["tmp_name"], $target_file);
-        unlink($previousSermonData['picture']);
+        unlink("../".$previousSermonData['picture']);
     } else{
       $lwea['image']="Please fill the required areas above";
     }
@@ -105,11 +104,12 @@ if (isset($_POST['updatebutton'])) {
     $target_file =$previousSermonData['picture']; 
   }
 
-  // foreach($lwea as $err){
-  //   echo "<br> $err";
-  // }
+  foreach($lwea as $err){
+    echo "<br> $err";
+  }
 
   if (count($lwea) ==0) {
+    $target_file = str_replace("../", "", $target_file);
     $id =  $_POST['editId'];
     $title = test_input($_POST["name"]);
     $date = test_input($_POST["testimony"]);

@@ -4,7 +4,7 @@ $pagetitle = "Minister";
 
 include("header.php")
 ?>
-<section class="  hero-wrap-2 js-fullheight col-sm  " style="background-image: url('images/ministry.jpg');width:100%; background-repeat: no-repeat; background-position:center; background-color: black; padding-top:500,background-size: 100% 80px;">
+<section class="  hero-wrap-2 js-fullheight col-sm  " style="background-image: url('images/ministry.jpg');width:100%; background-repeat: no-repeat; background-position:center; background-color: black; padding-top:500,background-size:100% 80px;">
 		<div class="overlay"></div>
 		<div class="container-fluid">
 			<div class="row no-gutters slider-text js-fullheight align-items-end ">
@@ -273,5 +273,5 @@ include("header.php")
 
 	</section>
 <?php
-include("Footer.php")
+include("footer.php")
 ?>

@@ -215,7 +215,7 @@ include("header.php");
                           titles= "<?php echo ucfirst($ffselec['Title'])  ?>"
                           date = "<?php echo ucfirst($ffselec['Date'])  ?>"
                           venue = "<?php echo ucfirst($ffselec['Venue']) ?>"
-                          about = "<?php echo ucfirst($ffselec['About'])  ?>"
+                          about = "<?php echo ucfirst(htmlspecialchars_decode($ffselec['About']))  ?>"
                           picture = "<?php echo $ffselec["Pictures"]?>"  
 
                          class="fa fa-edit pr-3" style="font-size:30px;color:blue;border-right:solid black 2px">
@@ -226,7 +226,7 @@ include("header.php");
                         title= "<?php echo ucfirst($ffselec['Title'])  ?>"
                         date = "<?php echo ucfirst($ffselec['Date'])  ?>"
                         venue = "<?php echo ucfirst($ffselec['Venue']) ?>"
-                        about = "<?php echo ucfirst($ffselec['About'])  ?>"
+                        about = "<?php echo $ffselec['About']  ?>"
                         picture = "<?php echo $ffselec['Pictures']?>"
                         >
                         </i>
@@ -420,12 +420,12 @@ include("footer.php");
       var venue = $(e.relatedTarget).attr('Venue');
       var about = $(e.relatedTarget).attr('About');
       var picture = $(e.relatedTarget).attr('picture');
-
+      // alert(about)
       $("#editId").val(id);
       $("#editTitle").val(title);
       $("#editDate").val(date);
       $("#editVenue").val(venue);
-      $("#editComment").val(about);
+      $("#editComment").html(about);
       $("#editPicture").attr('src', picture);
   })
 

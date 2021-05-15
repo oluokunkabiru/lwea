@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: May 15, 2021 at 06:47 PM
+-- Generation Time: May 15, 2021 at 07:21 PM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 8.0.0
 
@@ -143,7 +143,8 @@ CREATE TABLE `event` (
 --
 
 INSERT INTO `event` (`id`, `Title`, `Date`, `Venue`, `About`, `Pictures`, `reg_date`) VALUES
-(3, 'God is Good', '2021-05-16', '58 Asiwaju Omidiran street, Osogbo Osun State.', '&lt;p&gt;hjghjghmkg&lt;/p&gt;', 'pictures/image_6.jpg', '2021-05-13 15:44:55');
+(3, 'God is Good', '2021-05-16', '58 Asiwaju Omidiran street, Osogbo Osun State.', '&lt;p&gt;hjghjghmkg&lt;/p&gt;', 'pictures/image_6.jpg', '2021-05-13 15:44:55'),
+(5, 'village boy in the city', '2021-05-15', 'isalu iseyin', '&lt;p&gt;Let praise him because he worth to be praise&lt;br&gt;&lt;/p&gt;', 'pictures/1621097989IMG-20210308-WA0037.jpg', '2021-05-15 16:59:49');
 
 -- --------------------------------------------------------
 
@@ -328,7 +329,7 @@ ALTER TABLE `comment`
 -- AUTO_INCREMENT for table `event`
 --
 ALTER TABLE `event`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `gallery`

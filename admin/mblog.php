@@ -201,7 +201,7 @@ include("header.php");
                           topic = "<?php echo ucfirst($blog['title'])  ?>"
                           comment = "<?php echo $blog['content'] ?>"
                           url = "<?php echo ucfirst($blog['user'])  ?>"
-                          picture = "<?php echo ucfirst($blog['image'])?>"
+                          picture = "<?php echo $blog['image']?>"
 
                         data-target="#myModal" class="fa fa-eye pl-3 pr-3" 
                         style="font-size:30px;color:green;border-right:solid black 2px">

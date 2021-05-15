@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: May 15, 2021 at 07:21 PM
+-- Generation Time: May 15, 2021 at 09:35 PM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 8.0.0
 
@@ -68,7 +68,7 @@ CREATE TABLE `blog` (
 --
 
 INSERT INTO `blog` (`id`, `title`, `image`, `user`, `content`, `blog_date`) VALUES
-(1, 'Halleluyah', 'blogs/1619612078gallery-11.jpg', 'ife oluwa', '&lt;p&gt;Agbara olorun po&lt;/p&gt;', '2021-04-28 12:14:38'),
+(1, 'Halleluyah', 'blogs/1619612078gallery-11.jpg', 'Ife oluwa', '&lt;p&gt;Agbara olorun po lori aye wa&lt;br&gt;&lt;/p&gt;', '2021-05-15 17:30:31'),
 (2, 'Glory glory man united', 'pictures/children.jpg', 'Picture', '&lt;p&gt;ffu alkadakldjla &lt;br&gt;&lt;/p&gt;', '2021-05-15 15:03:39');
 
 -- --------------------------------------------------------
@@ -119,8 +119,8 @@ INSERT INTO `comment` (`id`, `name`, `email`, `comment`, `status`, `blog_id`, `c
 (7, 'Ifeoluwa', 'ytytry', '&lt;p&gt;ewertet&lt;/p&gt;', 'enabled', 2, '2021-05-15 15:20:17'),
 (10, 'Peace of God', 'ok@vb.com', '&lt;p&gt;Al-amidullilah&lt;br&gt;&lt;/p&gt;', 'enabled', 1, '2021-05-15 15:37:12'),
 (11, 'yes i dey', 'ok@vb.com', '&lt;p&gt;good daye&lt;br&gt;&lt;/p&gt;', 'disabled', 1, '2021-05-15 15:48:55'),
-(12, 'yes i dey', 'ok@vb.com', '&lt;p&gt;good daye&lt;br&gt;&lt;/p&gt;', 'disabled', 1, '2021-05-15 15:58:49'),
-(13, 'yes i dey', 'ok@vb.com', '&lt;p&gt;good daye&lt;br&gt;&lt;/p&gt;', 'disabled', 1, '2021-05-15 15:59:57');
+(12, 'yes i dey', 'ok@vb.com', '&lt;p&gt;good daye&lt;br&gt;&lt;/p&gt;', 'enabled', 1, '2021-05-15 17:31:21'),
+(13, 'yes i dey', 'ok@vb.com', '&lt;p&gt;good daye&lt;br&gt;&lt;/p&gt;', 'enabled', 1, '2021-05-15 17:31:19');
 
 -- --------------------------------------------------------
 
@@ -234,8 +234,8 @@ CREATE TABLE `testimony` (
 --
 
 INSERT INTO `testimony` (`id`, `name`, `testimony`, `picture`, `status`, `testimony_date`) VALUES
-(17, 'adesina kabir oluokun', '&lt;p&gt;Im very appreciate God Almighty&lt;br&gt;&lt;/p&gt;', '', 'enabled', '2021-05-15 16:32:46'),
-(18, 'Adesina kabir', '&lt;p&gt;I&apos;m very appreciate God Almighty and his messenger&lt;br&gt;&lt;/p&gt;', '', 'enabled', '2021-05-15 16:32:51');
+(18, 'Adesina kabir', '&lt;p&gt;I&apos;m very appreciate God Almighty and his messenger&lt;br&gt;&lt;/p&gt;', '', 'enabled', '2021-05-15 16:32:51'),
+(21, 'Villageboys', '&lt;p&gt;good evening everybody&lt;/p&gt;&lt;p&gt;how are you&lt;br&gt;&lt;/p&gt;', 'testimonies/162110716929956704.jpg', 'enabled', '2021-05-15 19:32:49');
 
 --
 -- Indexes for dumped tables
@@ -353,7 +353,7 @@ ALTER TABLE `sermon`
 -- AUTO_INCREMENT for table `testimony`
 --
 ALTER TABLE `testimony`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- Constraints for dumped tables
